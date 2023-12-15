@@ -1,0 +1,3 @@
+issues:
+
+1. product similarity. the review data doesnt provide much helpfulness in 

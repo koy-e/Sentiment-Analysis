@@ -1,0 +1,16 @@
+40 k reviews
+
+
+preprossing:
+
+1. lower Case
+2. remove punctuations
+3. combine Not with the next word
+
+
+training,
+
+we train the model on a 
+
+
+
