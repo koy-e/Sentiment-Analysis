@@ -78,20 +78,6 @@ def predict_sentiment(review, model, vectorizer):
     return score
 
 
-def main():
-    # Load the model and vectorizer
-    vectorizer = joblib.load('vectorizer.joblib')
-    model = joblib.load('model.joblib')
-
-    while True:
-        review_text = input("Enter a review (or type 'exit' to quit): ")
-        if review_text.lower() == 'exit':
-            break
-        sentiment_score = predict_sentiment(review_text, model, vectorizer)
-        print(
-            f"Sentiment score ranging from -1 (very negative) to 1 (very positive):{sentiment_score:.2f}")
-
-
 class SentimentAnalysisHandler(SimpleHTTPRequestHandler):
 
     def do_OPTIONS(self):
@@ -111,10 +97,8 @@ class SentimentAnalysisHandler(SimpleHTTPRequestHandler):
 
             if 'review' in post_params:
                 review_text = post_params['review']
-                print(review_text)
                 sentiment_score = predict_sentiment(review_text, model, vectorizer)
                 response = {"sentiment_score": str(sentiment_score)}
-                print(response)
             else:
                 response = {"error": "Missing 'review' parameter in JSON data."}
 

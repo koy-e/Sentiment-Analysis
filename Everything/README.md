@@ -15,6 +15,13 @@
 
 - Within the RealTimeSentimentFeedbackProgram folder, you will find the code `RealTimeSentimentFeedback.py` we used to train and save the best parameter Support Vector Machine model along with TfidfVectorizer. Both model and vectorizer are saved as a `.joblib` file and are used in `CreateModelandVectorizer.py` to provide realtime sentiment feedback to user input reviews.
 - `CreateModelandVectorizer.py` is a currently written to only handle command line inputs and provide sentiment outputs.
+- To interact with the RealtimeSentimentFeedback model on the command line, use this command in the Everything/ealTimeSentimentFeedbackProgram directory:
+        
+        python RealTimeSentimentFeedback.py
+
+- There is also an API that you can use along with the simple html webpage we made in the `site` directory or However you like to send http requests, use this command in the Everything/ealTimeSentimentFeedbackProgram directory
+
+        python RealTimeSentimentFeedbackServer.py
 
 ```
 In order to run all codes, please ensure you have installed all the required libraries and have python on your computer.
